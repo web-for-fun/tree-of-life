@@ -1,4 +1,5 @@
 import useInteractEvent from './useInteractEvent'
 import useTreeGrowthEvent from './useTreeGrowthEvent'
+import treeImages from './treeImages'
 
-export { useInteractEvent, useTreeGrowthEvent }
+export { useInteractEvent, useTreeGrowthEvent, treeImages }
