@@ -15,6 +15,7 @@ function App() {
     <Layout>
       <MainApp>Hello World!</MainApp>
       <div>you interact: {totalInteract} time(s)</div>
+      <div>currentPic: {currentPic}</div>
     </Layout>
   )
 }
