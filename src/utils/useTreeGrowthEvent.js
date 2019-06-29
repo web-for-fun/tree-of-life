@@ -10,6 +10,8 @@ function useTreeGrowthEvent(totalInteract) {
     setNextUserInteractCount(Math.ceil(nextUserInteractCount * 1.2))
   }
 
+  console.log(nextUserInteractCount)
+
   return currentPic
 }
 
