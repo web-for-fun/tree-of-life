@@ -76,7 +76,7 @@ function App() {
   const isMouseClick = useMouseImage()
   const { count, resetCount } = useTimer(isStart)
   // control timing here
-  const isEnd = count >= 115
+  const isEnd = count >= 45
 
   function handleClick() {
     resetInteractEvent()

@@ -10,9 +10,7 @@ function useTimer(isStart) {
   React.useEffect(() => {
     const myTime = isStart && setInterval(() => setCount(count + 1), 1000)
 
-    return () => {
-      return clearInterval(myTime)
-    }
+    return () => clearInterval(myTime)
   }, [count, isStart])
   return { count, resetCount }
 }
