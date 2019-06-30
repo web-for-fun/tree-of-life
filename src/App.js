@@ -64,6 +64,8 @@ function App() {
   const { currentPic, resetTreeGrowthEvent } = useTreeGrowthEvent(totalInteract)
   const isMouseClick = useMouseImage()
   const { count, resetCount } = useTimer(isStart)
+  // control timing here
+  const isEnd = count >= 115
 
   function handleClick() {
     resetInteractEvent()
@@ -81,7 +83,7 @@ function App() {
           TREE
         </TitleText>
       )}
-      {count >= 10 && (
+      {isEnd && (
         <EndgameText>
           BECAUSE THE TREE DOESN'T GROWTH AS FAST AS YOU CLICK HERE.
           <br />
@@ -96,13 +98,13 @@ function App() {
             <img src={MouseUp} alt='mouse up' />
           ))}
       </MouseAnimation>
-      <Tree isEnd={count >= 10} currentPic={currentPic} />
-      {count >= 10 && (
+      <Tree isEnd={isEnd} currentPic={currentPic} />
+      {isEnd && (
         <RestartButton onClick={() => handleClick()}>
           <img src={RestartIcon} alt='restart' />
         </RestartButton>
       )}
-      <Footer isEnd={count >= 10}>{count < 10 ? 'BY TONMAI' : 'GAME OVER'}</Footer>
+      <Footer isEnd={isEnd}>{count < 10 ? 'BY TONMAI' : 'GAME OVER'}</Footer>
     </Layout>
   )
 }
