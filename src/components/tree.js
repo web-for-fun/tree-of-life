@@ -7,20 +7,20 @@ const TreeStyle = styled.div`
   display: flex;
   align-items: flex-end;
   position: absolute;
-  bottom: 18%;
+  bottom: ${props => (props.isEnd ? '-40%' : '18%')};
   left: 50%;
   transform: translateX(-50%);
+  transform: ${props => (props.isEnd ? 'rotate(90deg)' : '')};
 
   & > img {
     width: 100%;
   }
 `
 
-function Tree({ currentPic }) {
-  console.log('dothis')
+function Tree({ currentPic, isEnd }) {
   const imageData = treeImages.find(item => item.currentPic === currentPic)
   return (
-    <TreeStyle>
+    <TreeStyle isEnd={isEnd}>
       {typeof imageData !== 'undefined' ? (
         <img
           src={treeImages.find(item => item.currentPic === currentPic).image}
