@@ -9,7 +9,10 @@ const globalStyle = css`
   body {
     margin: 0;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rubik Mono One', sans-serif;
+    background: #fbf4e2;
+    cursor: pointer;
+    user-select: none;
   }
 `
 
