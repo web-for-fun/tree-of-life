@@ -6,9 +6,7 @@ function useMouseImage() {
   React.useEffect(() => {
     const mouseTime = setInterval(() => setMouseClick(!isMouseClick), 1000)
 
-    return () => {
-      clearInterval(mouseTime)
-    }
+    return () => clearInterval(mouseTime)
   })
 
   return isMouseClick
