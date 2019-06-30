@@ -7,7 +7,7 @@ const TreeStyle = styled.div`
   display: flex;
   align-items: flex-end;
   position: absolute;
-  bottom: ${props => (props.isEnd ? '-10%' : '18%')};
+  bottom: ${props => (props.isEnd ? '-40%' : '18%')};
   left: 50%;
   transform: translateX(-50%);
   transform: ${props => (props.isEnd ? 'rotate(90deg)' : '')};

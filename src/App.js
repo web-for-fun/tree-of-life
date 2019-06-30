@@ -1,7 +1,13 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Layout from './components/layout'
-import { useInteractEvent, useTreeGrowthEvent, useMouseImage, useTimer } from './utils'
+import {
+  useInteractEvent,
+  useTreeGrowthEvent,
+  useMouseImage,
+  useTimer,
+  getTime,
+} from './utils'
 import Header from './components/header'
 import MouseClick from './images/IconMouse1.svg'
 import MouseUp from './images/IconMouse2.svg'
@@ -19,6 +25,11 @@ const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+const TimerText = styled.div`
+  color: #ff9966;
+  font-size: 1.4rem;
 `
 
 const TitleText = styled.div`
@@ -76,6 +87,7 @@ function App() {
   return (
     <Layout>
       <Header />
+      <TimerText>{getTime(count)}</TimerText>
       {!isStart && (
         <TitleText>
           PLANT
@@ -104,7 +116,7 @@ function App() {
           <img src={RestartIcon} alt='restart' />
         </RestartButton>
       )}
-      <Footer isEnd={isEnd}>{count < 10 ? 'BY TONMAI' : 'GAME OVER'}</Footer>
+      <Footer isEnd={isEnd}>{isEnd ? 'GAME OVER' : 'BY TONMAI'}</Footer>
     </Layout>
   )
 }
